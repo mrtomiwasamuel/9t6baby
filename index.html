@@ -35,29 +35,40 @@
         .tagline {
             font-size: 1rem;
             opacity: 0.8;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
         }
 
-        .bio {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            line-height: 1.4;
+        /* NEW UPCOMING EVENTS SECTION */
+        .events-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
-        .buttons a {
-            text-decoration: none;
-            color: black;
-            background: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            margin: 5px;
-            display: inline-block;
+        .event-box {
+            background: #111;
+            border: 1px solid #333;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .event-title {
+            font-size: 1.1rem;
             font-weight: 600;
         }
 
-        .buttons a:hover {
-            opacity: 0.85;
+        .event-date {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .event-location {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -67,16 +78,26 @@
         <h1>9T6baby</h1>
         <div class="tagline">Musician with a Flair for Marketing</div>
 
-        <div class="bio">
-            Blending rhythm with strategy.  
-            Crafting sounds, stories, and moments that connect.
+        <div class="events-title">Upcoming Events</div>
+
+        <div class="event-box">
+            <div class="event-title">Live Performance — Lagos</div>
+            <div class="event-date">Dec 15, 2025</div>
+            <div class="event-location">Freedom Park, Lagos Island</div>
         </div>
 
-        <div class="buttons">
-            <a href="#">Listen</a>
-            <a href="#">Watch</a>
-            <a href="#">Connect</a>
+        <div class="event-box">
+            <div class="event-title">"Vibe Sessions" Listening Party</div>
+            <div class="event-date">Jan 10, 2026</div>
+            <div class="event-location">Lekki Arts Center</div>
         </div>
+
+        <div class="event-box">
+            <div class="event-title">Marketing + Music Workshop</div>
+            <div class="event-date">Feb 2, 2026</div>
+            <div class="event-location">Online — Zoom</div>
+        </div>
+
     </div>
 
 </body>
