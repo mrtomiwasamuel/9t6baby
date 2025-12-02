@@ -11,103 +11,118 @@
       font-family: 'Montserrat', sans-serif;
       background: #000;
       color: #fff;
+      overflow-x: hidden;
     }
 
-    h1, h2 {
-      margin: 0;
-      padding: 0;
-    }
-
-    section {
-      padding: 60px 20px;
+    header {
+      padding: 20px;
       text-align: center;
+      background: #111;
     }
 
-    .event, .music-player {
-      max-width: 600px;
-      margin: 20px auto;
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #333;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    nav div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    #menu-content {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100%;
       background: #111;
       padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.05);
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+      transition: right 0.3s ease-in-out;
     }
 
-    .event h3 {
-      margin-bottom: 5px;
-      font-size: 20px;
-      font-weight: 700;
+    #menu-content a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 0;
+      border-bottom: 1px solid #333;
     }
 
-    .event p, .music-player p {
-      color: #aaa;
-      font-size: 18px;
+    #menu-content a:hover {
+      background: #333;
     }
 
-    iframe {
-      border-radius: 12px;
+    .link-item {
+      margin-bottom: 15px;
     }
+
+    .link-item a {
+      color: #1e90ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .link-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hamburger menu animation */
+    .menu-open div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-open div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-open div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
   </style>
 </head>
 <body>
 
   <!-- HEADER SECTION -->
-  <section id="home">
-    <h1 style="font-size: 48px; font-weight: 700; margin-bottom: 10px;">
-      9T6baby
-    </h1>
-    <p style="font-size: 20px; color: #aaa;">
-      Musician with a Flair for Marketing
-    </p>
-    <p style="margin-top: 20px;">
-      Blending rhythm with strategy. Crafting sounds, stories, and moments that connect.
-    </p>
-  </section>
+  <header>
+    <h1>9T6baby</h1>
+  </header>
 
-  <!-- UPCOMING EVENTS SECTION -->
-  <section id="events">
-    <h2 style="font-size: 32px; margin-bottom: 20px; font-weight: 700;">
-      Upcoming Events
-    </h2>
+  <!-- NAVIGATION MENU -->
+  <nav id="nav-menu">
+    <div id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="menu-content">
+      <a href="index.html">Home</a>
+      <a href="links.html">Links</a>
+      <a href="music.html">Music</a>
+      <a href="events.html">Events</a>
+    </div>
+  </nav>
 
-    <div class="event">
+  <!-- MAIN CONTENT SECTION -->
+  <section id="content" style="padding: 60px 20px; text-align: center;">
+    <h2 style="font-size: 32px; margin-bottom: 20px; font-weight: 700;">Upcoming Events</h2>
+
+    <div class="event" style="max-width: 600px; margin: 20px auto; background: #111; padding: 20px; border-radius: 16px; box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);">
       <h3>Live Performance — Lagos</h3>
       <p>Dec 15, 2025</p>
-      <p>Freedom Park, Lagos Island</p>
-    </div>
-
-    <div class="event">
-      <h3>"Vibe Sessions" Listening Party</h3>
-      <p>Jan 10, 2026</p>
-      <p>Lekki Arts Center</p>
-    </div>
-
-    <div class="event">
-      <h3>Marketing + Music Workshop</h3>
-      <p>Feb 2, 2026</p>
-      <p>Online — Zoom</p>
-    </div>
-  </section>
-
-  <!-- MUSIC SECTION -->
-  <section id="music">
-    <h2 style="font-size: 32px; margin-bottom: 20px; font-weight: 700;">
-      Music
-    </h2>
-
-    <p style="margin-bottom: 40px; color: #aaa; font-size: 18px;">
-      Listen to the latest track from 9T6baby.
-    </p>
-
-    <div class="music-player">
-      <iframe 
-        src="https://open.spotify.com/embed/track/19guXVqFapMw5APxZQZmPs?utm_source=generator" 
-        width="100%" 
-        height="352" 
-        frameborder="0" 
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-      </iframe>
-    </div>
-  </section>
-
-</body>
-</html>
+      <p>Freedom Park, Lagos Island
+        
