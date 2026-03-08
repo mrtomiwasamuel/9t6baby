@@ -3,66 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Nasty Beatz // 9T6baby</title>
+<title>Nasty Beatz OS</title>
 
 <style>
+
 body{
-  margin:0;
-  background:#000;
-  color:#00ff9f;
-  font-family:monospace;
+background:#000;
+color:#00ff9f;
+font-family:monospace;
+margin:0;
+overflow-x:hidden;
 }
 
-/* NAV */
 nav{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:#010a06;
-  padding:15px;
-  border-bottom:1px solid #00ff9f;
-  z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+background:#010a06;
+padding:12px;
+border-bottom:1px solid #00ff9f;
 }
 
 nav h1{
-  margin:0;
-  font-size:14px;
-  letter-spacing:2px;
+margin:0;
+font-size:14px;
 }
 
-/* SECTIONS */
 section{
-  padding:90px 20px 50px;
-  max-width:900px;
-  margin:auto;
+padding:90px 20px 40px;
+max-width:900px;
+margin:auto;
 }
 
 h2{
-  margin-bottom:20px;
-  letter-spacing:2px;
+letter-spacing:2px;
 }
 
-/* TERMINAL WINDOW */
+/* terminal */
+
 .terminal{
-  border:1px solid #00ff9f;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 0 20px rgba(0,255,159,0.2);
+border:1px solid #00ff9f;
+border-radius:10px;
+box-shadow:0 0 20px rgba(0,255,159,0.15);
+overflow:hidden;
 }
 
 .terminal-header{
-  background:#021;
-  padding:8px;
-  display:flex;
-  gap:8px;
+background:#021;
+padding:8px;
+display:flex;
+gap:8px;
 }
 
 .dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
+width:10px;
+height:10px;
+border-radius:50%;
 }
 
 .red{background:#ff5f56;}
@@ -70,49 +66,108 @@ h2{
 .green{background:#27c93f;}
 
 .terminal-body{
-  padding:15px;
+padding:18px;
+line-height:1.6;
 }
+
+/* players */
 
 iframe{
-  width:100%;
-  border:none;
-  margin-bottom:20px;
+width:100%;
+border:none;
+margin:15px 0;
 }
 
-/* LINKS */
+/* links */
+
 .links a{
-  display:block;
-  color:#00ff9f;
-  text-decoration:none;
-  margin:8px 0;
+display:block;
+color:#00ff9f;
+text-decoration:none;
+margin:6px 0;
 }
 
 .links a:hover{
-  color:#fff;
+color:#fff;
 }
 
-/* BLINK CURSOR */
-.cursor{
-  animation:blink 1s infinite;
+/* command terminal */
+
+#commandInput{
+background:black;
+border:1px solid #00ff9f;
+color:#00ff9f;
+padding:8px;
+width:100%;
+font-family:monospace;
 }
 
-@keyframes blink{
-  50%{opacity:0;}
+/* boot screen */
+
+#boot{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+color:#00ff9f;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:9999;
+font-size:14px;
 }
+
+/* visualizer */
+
+.visualizer{
+display:flex;
+gap:4px;
+margin:10px 0;
+}
+
+.bar{
+width:6px;
+height:20px;
+background:#00ff9f;
+animation:beat 1s infinite;
+}
+
+.bar:nth-child(2){animation-delay:0.2s}
+.bar:nth-child(3){animation-delay:0.4s}
+.bar:nth-child(4){animation-delay:0.1s}
+.bar:nth-child(5){animation-delay:0.3s}
+
+@keyframes beat{
+0%{height:10px}
+50%{height:30px}
+100%{height:10px}
+}
+
 </style>
 </head>
 
 <body>
 
+<div id="boot">
+<p>> booting NASTY_BEATZ_OS...</p>
+<p>> loading modules...</p>
+<p>> artist_module: 9T6baby</p>
+<p>> system ready</p>
+</div>
+
 <nav>
-<h1>> NASTY_BEATZ_OS v1.0 // 9T6baby</h1>
+<h1>> NASTY_BEATZ_OS // 9T6baby kernel</h1>
 </nav>
 
-<!-- ABOUT -->
 <section>
-<h2>> about_system.exe</h2>
+
+<h2>> identity.sys</h2>
 
 <div class="terminal">
+
 <div class="terminal-header">
 <div class="dot red"></div>
 <div class="dot yellow"></div>
@@ -121,23 +176,22 @@ iframe{
 
 <div class="terminal-body">
 
-<p>> booting_identity...</p>
 <p>> producer: Nasty Beatz</p>
 <p>> artist: 9T6baby</p>
-<p>> status: independent creative system</p>
-<p>> mission: sound, visuals, culture.</p>
-
-<p class="cursor">> _</p>
+<p>> role: sound architect</p>
+<p>> status: independent</p>
 
 </div>
 </div>
+
 </section>
 
-<!-- MUSIC TERMINAL PLAYLIST -->
 <section>
-<h2>> terminal_playlist.mode</h2>
+
+<h2>> terminal_playlist</h2>
 
 <div class="terminal">
+
 <div class="terminal-header">
 <div class="dot red"></div>
 <div class="dot yellow"></div>
@@ -146,35 +200,83 @@ iframe{
 
 <div class="terminal-body">
 
-<p>> loading_track_01 :: spotify_stream</p>
+<div class="visualizer">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
+
+<p>> spotify_stream</p>
+
 <iframe height="152"
-src="https://open.spotify.com/embed/track/19guXVqFapMw5APxZQZmPs"
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+src="https://open.spotify.com/embed/track/19guXVqFapMw5APxZQZmPs">
 </iframe>
 
-<p>> loading_track_02 :: audiomack_signal</p>
+<p>> audiomack_signal :: Kon Ko</p>
+
 <iframe height="252"
 src="https://audiomack.com/embed/its9t6baby/song/kon-ko">
 </iframe>
 
-<p>> loading_track_03 :: youtube_music_channel</p>
-<iframe height="220"
-src="https://www.youtube.com/embed/qiwCTzTWJUI"
-allowfullscreen>
+<p>> audiomack_signal :: Serenity</p>
+
+<iframe height="252"
+src="https://audiomack.com/embed/9t6baby/song/serenity">
 </iframe>
 
-<p>> playlist_status: ACTIVE</p>
-<p class="cursor">> waiting_for_next_drop...</p>
+<p>> audiomack_signal :: Gas (Afro Drill)</p>
+
+<iframe height="252"
+src="https://audiomack.com/embed/9t6baby/song/gas-afro-drill">
+</iframe>
+
+<p>> youtube_music_channel</p>
+
+<iframe height="220"
+src="https://www.youtube.com/embed/qiwCTzTWJUI">
+</iframe>
 
 </div>
 </div>
+
 </section>
 
-<!-- SOCIAL LINKS -->
 <section>
-<h2>> external_links.directory</h2>
+
+<h2>> command_terminal</h2>
 
 <div class="terminal">
+
+<div class="terminal-header">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+</div>
+
+<div class="terminal-body">
+
+<p>> type commands:</p>
+<p>play konko</p>
+<p>open links</p>
+<p>clear</p>
+
+<input id="commandInput" placeholder="enter command">
+
+<div id="terminalOutput"></div>
+
+</div>
+</div>
+
+</section>
+
+<section>
+
+<h2>> external_links</h2>
+
+<div class="terminal">
+
 <div class="terminal-header">
 <div class="dot red"></div>
 <div class="dot yellow"></div>
@@ -184,30 +286,74 @@ allowfullscreen>
 <div class="terminal-body links">
 
 <a href="https://www.youtube.com/@TomiwaSamuel2026" target="_blank">
-> YouTube // Nasty Beatz
+> youtube // nasty beatz
 </a>
 
-<a href="https://www.clubhouse.com/@tomiwasamuel" target="_blank">
-> Clubhouse
+<a href="https://audiomack.com/9t6baby" target="_blank">
+> audiomack // 9t6baby
 </a>
 
 <a href="https://www.instagram.com/masetropy" target="_blank">
-> Instagram
+> instagram
 </a>
 
 <a href="https://x.com/mrtomiwasamuel" target="_blank">
-> X (Twitter)
+> x network
 </a>
 
 <a href="https://wa.me/message/YBB5YR7MT6DHJ1" target="_blank">
-> WhatsApp Direct
+> whatsapp direct
 </a>
 
-<p class="cursor">> directory_open...</p>
+</div>
+</div>
 
-</div>
-</div>
 </section>
 
+<script>
+
+/* boot screen */
+
+setTimeout(()=>{
+document.getElementById("boot").style.display="none";
+},2000);
+
+/* command terminal */
+
+const input=document.getElementById("commandInput");
+const output=document.getElementById("terminalOutput");
+
+input.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+
+let cmd=input.value.toLowerCase();
+
+if(cmd==="play konko"){
+output.innerHTML+="<p>> loading Kon Ko...</p>";
+window.scrollTo({top:500,behavior:"smooth"});
+}
+
+else if(cmd==="open links"){
+output.innerHTML+="<p>> opening links directory...</p>";
+window.scrollTo({top:2000,behavior:"smooth"});
+}
+
+else if(cmd==="clear"){
+output.innerHTML="";
+}
+
+else{
+output.innerHTML+="<p>> command not recognized</p>";
+}
+
+input.value="";
+
+}
+
+});
+
+</script>
+
 </body>
-</html>
+  </html>
